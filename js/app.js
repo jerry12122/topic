@@ -1,4 +1,3 @@
-
 $(function(){
 	//一段正则，匹配所有_min.的图片src属性
 	var test = /_min\./
@@ -14,16 +13,17 @@ $(function(){
 		}		
 	})
     $("body").each(function(index,obj){	
-		if(test.test($(this).css('background'))){
-			var reSrc = $(this).css('background').replace(test,".");
+		if(test.test($(this).css('background-image'))){
+			var reSrc = $(this).css('background-image').replace(test,".");
+			console.log(reSrc)
+			reSrc = reSrc.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
+			console.log(reSrc)
 			var image = new Image()
 			if(image.complete){
-				$(this).css('background',reSrc)
+				$(this).css('background-image', 'url(' + reSrc + ')');
 			} 
 			image.src = reSrc
 		}		
 	})
 
 })
-
- 
