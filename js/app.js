@@ -10,9 +10,9 @@ $(function(){
 	})
     
     $("body").each(function(index,obj){	
-		if(test.test($(this).css('background-image'))){
-			var reSrc = $(this).css('background-image').replace(test,".");
-			$(this).css('background-image',reSrc)
+		if(test.test($(this).css('background'))){
+			var reSrc = $(this).css('background').replace(test,".");
+			$(this).css('background',reSrc)
 		}		
 	})
 
