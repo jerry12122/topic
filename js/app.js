@@ -15,9 +15,7 @@ $(function(){
     $("body").each(function(index,obj){	
 		if(test.test($(this).css('background-image'))){
 			var reSrc = $(this).css('background-image').replace(test,".");
-			console.log(reSrc)
 			reSrc = reSrc.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
-			console.log(reSrc)
 			var image = new Image()
 			if(image.complete){
 				$(this).css('background-image', 'url(' + reSrc + ')');
