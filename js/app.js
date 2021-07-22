@@ -19,7 +19,6 @@ $(function () {
 			onImageLoaded(reSrc, function () {
 				tmp.attr("src", reSrc)
 			})
-			
 		}
 	})
 
@@ -33,5 +32,15 @@ $(function () {
 			})
 		}
 	})
-
+})
+$(function() {
+	$("#qieh").click(function() {
+		if($("#qieh").is(":checked")) {
+			$("#app").css("display", "none");
+			$("#app1").css("display", "block")
+		} else {
+			$("#app1").css("display", "none");
+			$("#app").css("display", "block")
+		}
+	})
 })
